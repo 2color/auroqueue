@@ -5,8 +5,9 @@
   "author": "Daniel Norman",
   "private": true,
   "scripts": {
-    "prestart" : "echo 'prestart command'",
-    "start": "node server.js"
+    "prestart": "echo 'prestart command'",
+    "start": "node server.js",
+    "test": "lab"
   },
   "dependencies": {
     "good": "^6.4.0",
@@ -14,5 +15,9 @@
     "hapi": "^11.1.2",
     "inert": "^3.2.0",
     "vision": "^4.0.1"
+  },
+  "devDependencies": {
+    "code": "^2.0.1",
+    "lab": "^8.0.0"
   }
 }
