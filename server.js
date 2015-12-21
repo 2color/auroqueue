@@ -5,8 +5,10 @@
  */
 var Hapi = require('hapi');
 
+var config = { connections: { router: { stripTrailingSlash: true } } };
+
 // Create a new server
-const server = new Hapi.Server();
+const server = new Hapi.Server(config);
 
 // Setup the server with a host and port
 server.connection({
@@ -32,7 +34,7 @@ server.register([
         // static file serving support for hapi.js
         register: require('inert'),
     }, {
-        register: require('./server/routes.js')
+        register: require('./server/routes')
     }
 ], () => {
     server.start( () => console.log('Server started at: ' + server.info.uri) );
