@@ -33,17 +33,12 @@ var stateHelpers = {
     /**
      * Advance the currently served token 
      *
-     * Only advances up to the last given token. Otherwise no-op
-     *
      * @param {int} desk number to serve the advanced token
      * @return {int} the token to be served by the desk passed
      */
     advanceToken(desk) {
         desk = desk || 1;
         
-        if(state.lastCalledToken >= state.lastGivenToken) {
-            return false;
-        }
         state.lastCalledToken++;
 
         return state.desks.set(desk, state.lastCalledToken).get(desk);
