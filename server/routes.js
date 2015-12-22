@@ -19,7 +19,7 @@ exports.register = function(server, options, next){
             }
         }, {
             method: 'GET',
-            path: '/public/{path*}',            
+            path: '/{path*}',            
             handler: {
                 directory: { path: './public' }
             }
