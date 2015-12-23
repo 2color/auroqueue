@@ -14,7 +14,16 @@ Create a simple queue management system for the Auroville Financial Services. Ma
 [http://nodejs.org/](http://nodejs.org/)
 
 **Hapi** - A very well designed server framework that is easy to understand, and most importantly well documented.  Used in production by Yahoo, Walmart, Paypal and many others. 
+Hapi is build in a modular manner which means it requires some plugins.
+[good] - process monitoring
+[good-console] - console reporter
+[inert] - static file serving plugin
+[lab] - simple test utility
+[code] - asertion library
 [http://hapijs.com/](http://hapijs.com/)
+
+**Socket.IO** - a JavaScript library for realtime web applications. It enables realtime, bi-directional communication between web clients and servers. Auro Queue only uses Server -> Client communication. Socket.IO was chosen for its simplicity, reliability and compatibility. 
+[http://socket.io/](http://socket.io/)
 
 **Pure.css** - A tiny responsive css framework to make developers look like they have an idea about design.
 [http://purecss.io/](http://purecss.io/)
