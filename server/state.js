@@ -1,3 +1,5 @@
+var EventEmitter = require('events').EventEmitter;
+
 /**
  * Server state
  *  
@@ -29,7 +31,8 @@ const state = {
 };
 
 
-var stateHelpers = {
+
+var stateApi = {
     /**
      * Advance the currently served token 
      *
@@ -37,9 +40,9 @@ var stateHelpers = {
      * @return {int} the token to be served by the desk passed
      */
     advanceToken(desk) {
-        desk = desk || 1;
+        desk = desk || 1; //if no desk passed advance table 1
         
-        state.lastCalledToken++;
+        state.lastCalledToken = this.getIncremental(state.lastCalledToken);
 
         return state.desks.set(desk, state.lastCalledToken).get(desk);
     },
@@ -49,11 +52,19 @@ var stateHelpers = {
      *
      * Give a new token for a new person joining the queue
      *
+     * Reset the token to 1 after 99
+     *
      * @return {int} the new queue token
      */
     getNewToken() {
-        state.lastGivenToken++;
+        state.lastGivenToken = this.getIncremental(state.lastGivenToken);
+
         return state.lastGivenToken;
+    },
+
+
+    getIncremental(number) {
+        return (number < 99) ? (number + 1) : 1;
     },
 
     /**
@@ -65,17 +76,26 @@ var stateHelpers = {
      *
      * This means there's an implicit conversion to string of the key
      *
-     * @return {object} Object where 
-     *                  keys are the desk number and
-     *                  values are the token served
+     * @return {object} Object with 
+     *                  desks: {object}
+     *                      keys are the desk number and
+     *                      values are the token served
+     *                  lastCalledToken: {integer}
+     *                  lastGivenToken: {integer}
+     *
      */
-    getDesks() {
-        var desks = {};
+    getState() {
+        var stateCopy = {
+            desks: {},
+            lastGivenToken: state.lastGivenToken,
+            lastCalledToken: state.lastCalledToken
+        };
 
         state.desks.forEach((value, key) => {
-            desks[key] = value;
+            stateCopy.desks[key] = value;
         });
-        return desks;
+
+        return stateCopy;
     },
 
 
@@ -91,4 +111,4 @@ var stateHelpers = {
 };
 
 
-module.exports = stateHelpers;
+module.exports = stateApi;

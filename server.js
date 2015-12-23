@@ -4,6 +4,7 @@
  * requires dependencies and starts the server 
  */
 var Hapi = require('hapi');
+var state = require('./server/state');
 
 var config = { connections: { router: { stripTrailingSlash: true } } };
 
@@ -14,6 +15,18 @@ const server = new Hapi.Server(config);
 server.connection({
     port: parseInt(process.env.PORT, 10) || 3000
 });
+
+/**
+ * Socket.io setup
+ */
+var io = require("socket.io")(server.listener);
+server.app.io = io;
+
+io.on("connection", function (socket) {
+    // server.log('connected', { woot: "log data object"});
+    socket.emit("state", state.getState());
+})
+
 
 /**
  * Load all plugins and then start the server.

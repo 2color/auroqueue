@@ -5,7 +5,6 @@
  */
 const state = require('./state');
 
-
 exports.register = function(server, options, next){
 
     server.route([
@@ -17,7 +16,7 @@ exports.register = function(server, options, next){
                     file: './public/index.html'
                 }
             }
-        }, {
+        }, { 
             method: 'GET',
             path: '/{path*}',            
             handler: {
@@ -28,7 +27,7 @@ exports.register = function(server, options, next){
             method: 'GET',
             path: '/api/desks',            
             handler: (request, reply) => {
-                reply(state.getDesks());
+                reply(state.getState().desks);
             }
         },
         {
@@ -36,14 +35,23 @@ exports.register = function(server, options, next){
             path: '/api/advance/{desk}',            
             handler: (request, reply) => {
                 state.advanceToken(request.params.desk);
-                reply(state.getDesks());
+
+                var response = state.getState();
+                reply(response);
+
+                request.server.app.io.emit('state', response);
             }
         },
         {
             method: 'GET',
             path: '/api/token',            
             handler: (request, reply) => {
-                reply(state.getNewToken());
+                state.getNewToken();
+
+                var response = state.getState();
+                reply(response);
+
+                request.server.app.io.emit('state', response);
             }
         }
     ]);
