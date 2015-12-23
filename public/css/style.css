@@ -4,6 +4,10 @@
     box-sizing: border-box;
 }
 
+html { 
+    overflow-y: hidden; 
+}
+
 body { 
     color: #111;
     background-color: #1f8dd6;
@@ -13,6 +17,43 @@ body {
     height: 50vh;
 }
 
+.height-1-8 {
+    height: 12.5vh;
+}
+
+.height-2-8,
+.height-1-4 {
+    height: 25vh;
+}
+
+.height-3-8 {
+    height: 37.5vh;
+}
+
+.height-4-8, .height-2-4 {
+    height: 50vh;
+}
+
+.height-5-8 {
+    height: 62.5vh;
+}
+
+.height-6-8, .height-3-4 {
+    height: 75vh;
+}
+
+.height-7-8 {
+    height: 87.5vh;
+}
+
+.height-8-8, .height-4-4  {
+    height: 100vh;
+}
+
+.info-box--title {
+    margin: auto;
+}
+
 .info-box {
     text-align: center;
     border: 1px solid #ddd;
@@ -20,9 +61,8 @@ body {
     flex-direction: column;
 }
 
-.info-box.middle, .vertically-center
-{
-    justify-content: center;
+.l-box.middle {
+    margin: auto;
 }
 
 .text-box-head {
@@ -50,12 +90,13 @@ body {
 
 .serve-table {
     color: #111;
-    font-size: 33px;
+    font-size: 3px;
     border: none;
 }
 
 
 .serve-table th, .serve-table td {
+    font-size: 60px;
     font-weight: bold;
     border: none;
 }
@@ -65,8 +106,7 @@ body {
     color: white;
 }
 
-.serve-table .serve-table-head
-{
+.serve-table .serve-table-head {
     background: none;
 }
 
