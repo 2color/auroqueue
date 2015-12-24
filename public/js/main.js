@@ -12,3 +12,12 @@ socket.on('state', function(state) {
 		lastGiven.textContent = state.lastGivenToken;
     }
 });
+
+
+/**
+ * Refresh weather iframe
+ */
+setInterval(function() {
+	var iframe = document.getElementById('forecast_embed');
+	iframe.src = iframe.src;
+}, 1000 * 60 * 10); 
