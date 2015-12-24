@@ -34,6 +34,12 @@ Install Node.js by following the following guide [http://blog.wia.io/installing-
 
 After Node.js is installed, run `npm install` to install all dependencies.
 
+PM2 is required as a process manager for node which will make sure Auroqueue stays up.
+
+To install pm2 globally
+```
+$ npm install -g pm2
+```
 
 Start the server by running the command:
 ```
