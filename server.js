@@ -13,7 +13,7 @@ const server = new Hapi.Server(config);
 
 // Setup the server with a host and port
 server.connection({
-    port: parseInt(process.env.PORT, 10) || 3000
+    port: parseInt(process.env.PORT, 10) || 8000
 });
 
 /**
@@ -40,7 +40,10 @@ server.register([
             opsInterval: 5000,
             reporters: [{
                 reporter: require('good-console'),
-                events: { log: '*', response: '*' }
+                events: { log: '*', response: '*' },
+                config: {
+                    format: 'YY/MM/DD HH:mm:ss'
+                }
             }]
         }
     }, {
@@ -50,7 +53,7 @@ server.register([
         register: require('./server/routes')
     }
 ], () => {
-    server.start( () => console.log('Server started at: ' + server.info.uri) );
+    server.start( () => server.log([], 'Server started at: ' + server.info.uri) );
 });
 
 
