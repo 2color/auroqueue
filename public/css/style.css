@@ -84,6 +84,19 @@ body {
     margin: 10px auto;
 }
 
+.animated {
+    animation: pulse 5s ease-in running;
+}
+
+@keyframes pulse {
+      0% {
+        background-color: #001F3F;
+      }
+      100% {
+        background-color: #FF4136;
+      }
+}
+
 .text-box-number {
     font-size: 8em;
 }
@@ -96,7 +109,7 @@ body {
 
 
 .serve-table th, .serve-table td {
-    font-size: 60px;
+    font-size: 50px;
     font-weight: bold;
     border: none;
 }
@@ -109,5 +122,6 @@ body {
 .serve-table .serve-table-head {
     background: none;
 }
+
 
 

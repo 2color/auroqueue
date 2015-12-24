@@ -39,7 +39,7 @@ exports.register = function(server, options, next){
                 var response = state.getState();
                 reply(response);
 
-                request.server.app.io.emit('state', response);
+                request.server.app.io.emit('desks', response);
             }
         },
         {
@@ -51,7 +51,7 @@ exports.register = function(server, options, next){
                 var response = state.getState();
                 reply(response);
 
-                request.server.app.io.emit('state', response);
+                request.server.app.io.emit('token', response);
             }
         }
     ]);
