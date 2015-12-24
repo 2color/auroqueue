@@ -29,6 +29,10 @@ Hapi is build in a modular manner which means it requires some plugins.
 [http://purecss.io/](http://purecss.io/)
 
 
+### Raspberry Pi config
+it was added to the 192.168.10.1 network for installation and debugging. The configuration for that should be removed once it's fully setup.
+Additionally the root password has been changed. That too should be reverted.
+
 ### Requirements:
 Install Node.js by following the following guide [http://blog.wia.io/installing-node-js-v4-0-0-on-a-raspberry-pi/](following guide).
 
