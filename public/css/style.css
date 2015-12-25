@@ -13,6 +13,10 @@ body {
     background-color: #1f8dd6;
 }   
 
+.hidden {
+    display: none;
+}
+
 .half {
     height: 50vh;
 }
@@ -132,9 +136,8 @@ body {
     margin: 0 auto;
 }
 
-
 .serve-table th, .serve-table td {
-    font-size: 50px;
+    font-size: 40px;
     font-weight: bold;
     padding: 8px 20px;
 }
