@@ -68,6 +68,17 @@ $ pm2 logs
 ```
 
 
+### Endpoints 
+
+There are three api endpoints for managing the queue
+
+URL | Use 
+--- | --- 
+`/api/desks` | returns the map of the desks
+`/api/token` | allocates a new token and triggers a websocket event for screen update.
+`/api/advance/[DESK_NUMBER]` | e.g. /api/advance/4 will call the next token in queue to desk 4 and update the screen.
+
+
 ### Premature Optimizations
 > "Premature optimization is the root of all evil”
 
