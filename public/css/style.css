@@ -57,8 +57,14 @@ body {
 .info-box {
     text-align: center;
     border: 1px solid #ddd;
-    display: flex;
-    flex-direction: column;
+}
+
+.info-box--top {
+    height: 40vh;
+}
+
+.info-box--bottom {
+    height: 60vh;
 }
 
 .l-box.middle {
@@ -85,38 +91,60 @@ body {
 }
 
 .animated {
-    animation: pulse 5s ease-in running;
+    -webkit-animation: pulse 5s ease-out running;
+    -moz-animation:    pulse 5s ease-out running;
+    -o-animation:      pulse 5s ease-out running;
+    animation:         pulse 5s ease-out running;
+}
+
+
+@-webkit-keyframes pulse {
+      100% {
+        background-color: #3EFF67;
+      }
+}
+
+@-moz-keyframes pulse {
+      100% {
+        background-color: #3EFF67;
+      }
+}
+
+@-o-keyframes pulse {
+      100% {
+        background-color: #3EFF67;
+      }
 }
 
 @keyframes pulse {
-      0% {
-        background-color: #001F3F;
-      }
       100% {
-        background-color: #FF4136;
+        background-color: #3EFF67;
       }
 }
 
 .text-box-number {
-    font-size: 8em;
+    font-size: 300px;
 }
 
 .serve-table {
     color: #111;
-    font-size: 3px;
     border: none;
+    margin: 0 auto;
 }
 
 
 .serve-table th, .serve-table td {
     font-size: 50px;
     font-weight: bold;
-    border: none;
+    padding: 8px 20px;
+}
+.serve-table th {
+    color: white;
+    font-size: 50px;
 }
 
-.serve-table th
-{
-    color: white;
+.serve-table td {
+    font-size: 70px;
 }
 
 .serve-table .serve-table-head {
