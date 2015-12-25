@@ -33,31 +33,48 @@ Hapi is build in a modular manner which means it requires some plugins.
 it was added to the 192.168.10.1 network for installation and debugging. The configuration for that should be removed once it's fully setup.
 Additionally the root password has been changed. That too should be reverted.
 
-### Requirements:
+## Requirements:
 Install Node.js by following the following guide [http://blog.wia.io/installing-node-js-v4-0-0-on-a-raspberry-pi/](following guide).
 
 After Node.js is installed, run `npm install` to install all dependencies.
 
 PM2 is required as a process manager for node which will make sure Auroqueue stays up.
 
-To install pm2 globally
+
+## Installation
+
+### First Time 
+
+To install pm2 globally 
 ```
-$ npm install -g pm2
+$ npm install -g pm2 
 ```
+
+To install dependencies
+```
+$ npm install 
+```
+
+## Starting
 
 Start the server by running the command:
 ```
 $ npm start
 ```
 
-Now all of your server html and js files are being watched and on change the node server gets restarted automatically.
+To see logs and stats
+```
+$ pm2 logs
+```
 
-#### Premature Optimizations
+
+### Premature Optimizations
 > "Premature optimization is the root of all evil”
+
 It is always so tempting. Great efforts have been made to avoid these. A proper build system, minification, uglification etc. are not here for a reason.
 
 
-#### Folder Structure
+### Folder Structure
 There are two main folders in the stack. The "**public**" folder for front-end (client side) code. All files within are served under the path `/public/`
 
 The "**server**" folder contains server side code with the exception of the `server.js` file in the root.
