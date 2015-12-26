@@ -1,0 +1,9 @@
+#!/bin/sh
+sudo xset -dpms
+sudo xset s off
+matchbox-window-manager &
+./gpio_read.sh &
+unclutter &
+while true; do
+	chromium --disable-cache --kiosk --disable-infobars localhost?cache-bust=1
+done
