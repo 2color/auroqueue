@@ -21,54 +21,14 @@ body {
     height: 50vh;
 }
 
-.height-1-8 {
-    height: 12.5vh;
-}
-
-.height-2-8,
-.height-1-4 {
-    height: 25vh;
-}
-
-.height-3-8 {
-    height: 37.5vh;
-}
-
-.height-4-8, .height-2-4 {
-    height: 50vh;
-}
-
-.height-5-8 {
-    height: 62.5vh;
-}
-
-.height-6-8, .height-3-4 {
-    height: 75vh;
-}
-
-.height-7-8 {
-    height: 87.5vh;
-}
-
-.height-8-8, .height-4-4  {
-    height: 100vh;
-}
-
 .info-box--title {
     margin: auto;
 }
 
 .info-box {
+    height: 100vh;
     text-align: center;
     border: 1px solid #ddd;
-}
-
-.info-box--top {
-    height: 40vh;
-}
-
-.info-box--bottom {
-    height: 60vh;
 }
 
 .l-box.middle {
@@ -81,7 +41,7 @@ body {
     font-weight: 400;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    font-size: 2em;
+    font-size: 70px;
 }
 
 .text-box-subhead {
@@ -95,6 +55,7 @@ body {
 }
 
 .animated {
+    background: #3EFF67;
     -webkit-animation: pulse 5s ease-out running;
     -moz-animation:    pulse 5s ease-out running;
     -o-animation:      pulse 5s ease-out running;
@@ -127,7 +88,8 @@ body {
 }
 
 .text-box-number {
-    font-size: 300px;
+    margin-top: 20px;
+    font-size: 400px;
 }
 
 .serve-table {
@@ -137,17 +99,15 @@ body {
 }
 
 .serve-table th, .serve-table td {
-    font-size: 40px;
+    font-size: 100px;
     font-weight: bold;
-    padding: 8px 20px;
+    padding: 40px 20px;
 }
 .serve-table th {
-    color: white;
-    font-size: 50px;
 }
 
 .serve-table td {
-    font-size: 70px;
+    color: white;
 }
 
 .serve-table .serve-table-head {
