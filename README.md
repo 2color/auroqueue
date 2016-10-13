@@ -1,7 +1,9 @@
 # Auro Queue
-==========
 
 A queue management system for Auroville. Build with modern open source technologies. 
+
+![QMS](http://www.conicsystems.net/Queue_1.jpg)
+
 
 ## The Goal:
 Create a simple queue management system for the Auroville Financial Services. Made to run on a Raspberry Pi together with a switch for token handout and screen to display queue status and other pluggable widgets. 
