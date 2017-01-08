@@ -91,3 +91,9 @@ It is always so tempting. Great efforts have been made to avoid these. A proper 
 There are two main folders in the stack. The "**public**" folder for front-end (client side) code. All files within are served under the path `/public/`
 
 The "**server**" folder contains server side code with the exception of the `server.js` file in the root.
+
+
+### Behind the scenes 
+The story of how Auro Queue came to be was told at [fullstack.js Berlin](https://www.meetup.com/fullstack-berlin/):
+[![](https://img.youtube.com/vi/EdB-Vuqtlc0/0.jpg)](https://www.youtube.com/watch?v=EdB-Vuqtlc0)
+
