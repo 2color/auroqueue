@@ -3,7 +3,6 @@
   "description": "Queue management system",
   "version": "0.0.1",
   "author": "Daniel Norman",
-  "private": true,
   "scripts": {
     "start": "PORT=80 pm2 start server.js --name \"auroqueue\"",
     "stop": "pm2 stop \"auroqueue\"",
