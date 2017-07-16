@@ -7,6 +7,7 @@ image_resource:
 
 inputs:
 - name: auroqueue-app
+  path: .
 
 run:
-  path: auroqueue-app/ci/task_run_tests.sh
+  path: ci/test.sh

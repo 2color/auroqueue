@@ -12,4 +12,4 @@ jobs:
   - get: auroqueue-app
     trigger: true
   - task: auroqueue-test
-    file: auroqueue-app/ci/task_run_tests.yml
+    file: auroqueue-app/ci/test.yml
