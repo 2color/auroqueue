@@ -1,0 +1,15 @@
+---
+resources:
+- name: auroqueue-app
+  type: git
+  source:
+    uri: https://github.com/2color/auroqueue
+
+jobs:
+- name: job-test-autoqueue
+  public: false
+  plan:
+  - get: auroqueue-app
+    trigger: true
+  - task: auroqueue-test
+    file: auroqueue-app/ci/task_run_tests.yml
