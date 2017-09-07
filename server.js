@@ -13,7 +13,8 @@ const server = new Hapi.Server(config);
 
 // Setup the server with a host and port
 server.connection({
-    port: parseInt(process.env.PORT, 10) || 8000
+    port: parseInt(process.env.PORT, 10) || 8000,
+    routes: { log: true }
 });
 
 /**
