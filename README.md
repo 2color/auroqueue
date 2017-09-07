@@ -80,6 +80,19 @@ URL | Use
 `/api/token` | allocates a new token and triggers a websocket event for screen update.
 `/api/advance/[DESK_NUMBER]` | e.g. /api/advance/4 will call the next token in queue to desk 4 and update the screen.
 
+## Docker
+
+### Building
+
+```
+docker build -t auroqueue .
+```
+
+### Running
+
+`
+docker run -p 8000:8000 --init auroqueue
+`
 
 ### Premature Optimizations
 > "Premature optimization is the root of all evil”
