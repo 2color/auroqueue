@@ -5,7 +5,8 @@
   "author": "Daniel Norman",
   "private": true,
   "scripts": {
-    "start": "PORT=8000 pm2 start server.js --name \"auroqueue\"",
+    "start": "PORT=8000 node server.js",
+    "start-pm2": "PORT=8000 pm2 start server.js --name \"auroqueue\"",
     "stop": "pm2 stop \"auroqueue\"",
     "logs": "pm2 logs",
     "test": "lab"

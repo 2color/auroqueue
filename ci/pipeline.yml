@@ -6,12 +6,12 @@ resources:
     uri: https://github.com/2color/auroqueue
     branch: master
 
-# - name: auroqueue-docker-image
-#   type: docker-image
-#   source:
-#     username: ((docker-hub-username))
-#     password: ((docker-hub-password))
-#     repository: 2color/auroqueue
+- name: auroqueue-docker-image
+  type: docker-image
+  source:
+    username: ((docker-hub-username))
+    password: ((docker-hub-password))
+    repository: 2color/auroqueue
 
 jobs:
 - name: auroqueue
@@ -49,3 +49,6 @@ jobs:
         path: npm
         dir: src
         args: ["test"]
+  - put: auroqueue-docker-image
+    params:
+      build: auroqueue-repo/
