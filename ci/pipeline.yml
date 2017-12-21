@@ -30,9 +30,9 @@ jobs:
         type: docker-image
         source:
           repository: node
-          tag: 8-alpine
+          tag: 8
       run:
-        path: auroqueue/ci/install.sh
+        path: auroqueue-repo/ci/install.sh
       outputs:
         - name: src
   - task: unit tests
@@ -44,7 +44,7 @@ jobs:
         type: docker-image
         source:
           repository: node
-          tag: 8-alpine
+          tag: 8
       run:
         path: npm
         dir: src
