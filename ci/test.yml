@@ -6,8 +6,7 @@ image_resource:
   source: {repository: node, tag: 8-alpine}
 
 inputs:
-- name: auroqueue-app
-  path: .
+- name: auroqueue-repo
 
 run:
   path: ci/test.sh

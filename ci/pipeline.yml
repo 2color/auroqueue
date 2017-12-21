@@ -1,15 +1,51 @@
 ---
 resources:
-- name: auroqueue-app
+- name: auroqueue-repo
   type: git
   source:
     uri: https://github.com/2color/auroqueue
+    branch: master
+
+# - name: auroqueue-docker-image
+#   type: docker-image
+#   source:
+#     username: ((docker-hub-username))
+#     password: ((docker-hub-password))
+#     repository: 2color/auroqueue
 
 jobs:
-- name: job-test-autoqueue
+- name: auroqueue
   public: false
   plan:
-  - get: auroqueue-app
+  - get: auroqueue-repo
     trigger: true
-  - task: auroqueue-test
-    file: auroqueue-app/ci/test.yml
+  - task: install node_modules
+    config:
+      inputs:
+        - name: auroqueue-repo
+      caches:
+        - path: auroqueue-repo/node_modules
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: 8-alpine
+      run:
+        path: auroqueue/ci/install.sh
+      outputs:
+        - name: src
+  - task: unit tests
+    config:
+      inputs:
+        - name: src
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: node
+          tag: 8-alpine
+      run:
+        path: npm
+        dir: src
+        args: ["test"]
