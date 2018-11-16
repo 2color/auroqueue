@@ -4,8 +4,6 @@ A paperless queue management system to make waiting in line a little less painfu
 
 Built with modern open source technologies. 
 
-![QMS](http://www.conicsystems.net/Queue_1.jpg)
-
 ## Requirements
 - TV to connect the Raspberry Pi
 - Raspberry Pi with HDMI to connect to TV with network connection
