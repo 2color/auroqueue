@@ -1,8 +1,16 @@
-# Auro Queue
+# Auroqueue
 
-A queue management system for Auroville. Build with modern open source technologies. 
+A paperless queue management system to make waiting in line a little less painful. Inititally built for Auroville but adaptable to any reception that has multiple service representetives serving with a computer. 
+
+Built with modern open source technologies. 
 
 ![QMS](http://www.conicsystems.net/Queue_1.jpg)
+
+## Requirements
+- TV to connect the Raspberry Pi
+- Raspberry Pi with HDMI to connect to TV with network connection
+- Button which will connect to the Raspberry Pi to allocate a waiting number 
+- Computers connected to the same network as the Raspberry Pi which which make a call to advance the queue
 
 
 ## The Goal:
