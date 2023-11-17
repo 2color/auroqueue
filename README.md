@@ -1,6 +1,6 @@
 # Auroqueue
 
-A paperless queue management system to make waiting in line a little less painful. Inititally built for Auroville but adaptable to any reception that has multiple service representetives serving with a computer. 
+A paperless queue management system for running on a Raspberry Pi to make waiting in line more orderly. Inititally built for Auroville but adaptable to any reception that has multiple service representetives serving with a computer. 
 
 Built with modern open source technologies. 
 
